@@ -1,7 +1,7 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include "../libft/libft.h"
-# include "../mlx/mlx.h"
+# include <mlx.h>
 # include <stdio.h>
 # include <fcntl.h>
 # include <unistd.h>
@@ -26,13 +26,16 @@ typedef struct s_gvars
 	char		*floor;
 	char		*item;
 	void		*mlx;
-	void		*mlx_win;
+	void		*win;
 }t_gvars;
-typedef struct s_mlx
+typedef struct s_img
 {
-	void	*mlx;
-	void	*mlx_win;
-}t_mlx;
+	void		*wall;
+	void		*player;
+	void		*exit;
+	void		*floor;
+	void		*item;
+}t_img;
 void	check_map_format(char *map);
 int		ft_error(t_gvars *vars, int etype);
 void	ft_free_map(t_gvars *vars);

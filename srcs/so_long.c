@@ -38,16 +38,16 @@ static void	init_struct(t_gvars *vars)
 	vars->c_count = 0;
 	vars->p_count = 0;
 	vars->move_count = 0;
-	vars->exit = ft_strdup("../img/door.png");
-	vars->wall = ft_strdup("../img/wall.png");
-	vars->floor = ft_strdup("../img/floor.png");
-	vars->item = ft_strdup("../img/item.png");
-	vars->player = ft_strdup("../img/player.png");
+	vars->exit = ft_strdup("./img/door.xpm");
+	vars->wall = ft_strdup("./img/wall.xpm");
+	vars->floor = ft_strdup("./img/floor.xpm");
+	vars->item = ft_strdup("./img/item.xpm");
+	vars->player = ft_strdup("./img/player.xpm");
 }
 
 void leaks()
 {
-	system("leaks a.out");
+	system("leaks -q so_long");
 }
 
 int	main(int argc, char **argv)
