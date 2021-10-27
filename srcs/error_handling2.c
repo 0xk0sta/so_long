@@ -14,3 +14,9 @@ void	check_map_format(char *map)
 	if (map[len - 4] != '.')
 		exit((int)write(1, &E2, 27));
 }
+
+void	exit_hook(t_gvars *vars)
+{
+	ft_free_map(vars);
+	exit(0);
+}

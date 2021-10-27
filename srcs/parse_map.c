@@ -1,6 +1,6 @@
 #include "../includes/so_long.h"
 
-void 	parse_map(t_gvars *vars)
+void	parse_map(t_gvars *vars)
 {
 	size_t	i;
 

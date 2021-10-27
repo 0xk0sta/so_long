@@ -1,6 +1,6 @@
 #include "../includes/so_long.h"
 
-int 	is_map_even(t_gvars *vars)
+int	is_map_even(t_gvars *vars)
 {
 	size_t	i;
 	size_t	j;
