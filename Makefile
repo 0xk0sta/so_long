@@ -10,7 +10,7 @@ LIBFT	= libft/libft.a
 OBJS	= ${SRCS:.c=.o}
 NAME	= so_long
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -Imlx -std=c99
+CFLAGS	= -Wall -Wextra -Werror -Imlx
 RM		= rm -rf
 
 all: ${NAME}
