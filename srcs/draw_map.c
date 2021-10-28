@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acostal- <acostal-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 11:37:14 by acostal-          #+#    #+#             */
-/*   Updated: 2021/10/28 11:37:44 by acostal-         ###   ########.fr       */
+/*   Created: 2021/10/28 12:00:22 by acostal-          #+#    #+#             */
+/*   Updated: 2021/10/28 12:00:23 by acostal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int	mlx_initialize(t_gvars *vars)
 	xpm_to_img(vars);
 	first_draw(vars);
 	mlx_key_hook(vars->mlx_win, key_hook_handle, vars);
+	mlx_hook(vars->mlx_win, 17, 1L << 17, red_x_handle, vars);
 	mlx_loop(vars->mlx);
 	return (0);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acostal- <acostal-@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 11:41:38 by acostal-          #+#    #+#             */
-/*   Updated: 2021/10/28 11:41:40 by acostal-         ###   ########.fr       */
+/*   Created: 2021/10/28 12:01:49 by acostal-          #+#    #+#             */
+/*   Updated: 2021/10/28 12:01:52 by acostal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,5 @@ int		is_map_even(t_gvars *vars);
 int		mlx_initialize(t_gvars *vars);
 int		key_hook_handle(int keycode, t_gvars *vars);
 void	exit_hook(t_gvars *vars);
+int		red_x_handle(int keycode, t_gvars *vars);
 #endif
