@@ -1,21 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_handler.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acostal- <acostal-@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/28 11:38:15 by acostal-          #+#    #+#             */
+/*   Updated: 2021/10/28 11:38:25 by acostal-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/so_long.h"
-/*
- *
- * esc = 53;
- * aKey = 0;
- * dKey = 2;
- * upArrow = 13;
- * sKey = 1;
- *
- * pos storage format:
- * first pos = y;
- * second pos = x;
- * Left = x - 32
- * Right = x + 32
- * Up = y - 32
- * Down = y + 32
-*/
-void	up_move(t_gvars *vars)
+
+static void	up_move(t_gvars *vars)
 {
 	char	c;
 
@@ -38,7 +35,7 @@ void	up_move(t_gvars *vars)
 		exit(ft_error(vars, 2));
 }
 
-void	down_move(t_gvars *vars)
+static void	down_move(t_gvars *vars)
 {
 	char	c;
 
@@ -61,7 +58,7 @@ void	down_move(t_gvars *vars)
 		exit(ft_error(vars, 2));
 }
 
-void	left_move(t_gvars *vars)
+static void	left_move(t_gvars *vars)
 {
 	char	c;
 
@@ -84,7 +81,7 @@ void	left_move(t_gvars *vars)
 		exit(ft_error(vars, 2));
 }
 
-void	right_move(t_gvars *vars)
+static void	right_move(t_gvars *vars)
 {
 	char	c;
 

@@ -20,7 +20,7 @@ ${NAME}: ${OBJS}
 	@${CC} ${CFLAGS} ${LIBFT} ${OBJS} -Iincludes -lmlx -framework OpenGL -framework AppKit -o ${NAME}
 
 clean:
-	@cd libft ; make fclean
+	@cd libft ; make clean
 	@${RM} ${OBJS}
 
 fclean: clean

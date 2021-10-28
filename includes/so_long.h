@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acostal- <acostal-@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/28 11:41:38 by acostal-          #+#    #+#             */
+/*   Updated: 2021/10/28 11:41:40 by acostal-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include "../libft/libft.h"
@@ -41,20 +53,19 @@ typedef struct s_gvars
 	int			e_pos[2];
 }t_gvars;
 void	check_map_format(char *map);
-int		ft_error(t_gvars *vars, int etype);
-void	ft_free_map(t_gvars *vars);
-void	print_map(t_gvars *vars);
-int		ft_free_imgs(t_gvars *img_lst);
 void	count_lines(t_gvars *vars);
 void	parse_map(t_gvars *vars);
 void	count_lines(t_gvars *vars);
+void	count_ch(t_gvars *vars, char c);
+void	ft_free_map(t_gvars *vars);
+void	destroy_imgs(t_gvars *vars);
+int		ft_error(t_gvars *vars, int etype);
+int		ft_free_imgs(t_gvars *img_lst);
 int		check_top_n_bot(t_gvars *vars, int chk);
 int		check_count(t_gvars *vars);
-void	count_ch(t_gvars *vars, char c);
 int		check_chars(t_gvars *vars, char *line);
 int		is_map_even(t_gvars *vars);
 int		mlx_initialize(t_gvars *vars);
-void	destroy_imgs(t_gvars *vars);
 int		key_hook_handle(int keycode, t_gvars *vars);
 void	exit_hook(t_gvars *vars);
 #endif
