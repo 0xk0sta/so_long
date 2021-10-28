@@ -8,26 +8,7 @@
 # define E0 "Error: wrong route or error opening the map file\n"
 # define E1 "Error: Map is not even\n"
 # define E2 "Error: wrong map extension\n"
-# define tsz 32
-typedef struct s_gvars
-{
-	char		**buffer;
-	int			map_fd;
-	size_t		height;
-	size_t		width;
-	char		*m_name;
-	int			p_count;
-	int			e_count;
-	int			c_count;
-	int			move_count;
-	char		*wall;
-	char		*player;
-	char		*exit;
-	char		*floor;
-	char		*item;
-	void		*mlx;
-	void		*win;
-}t_gvars;
+# define TSZ 32
 typedef struct s_img
 {
 	void		*wall;
@@ -36,6 +17,29 @@ typedef struct s_img
 	void		*floor;
 	void		*item;
 }t_img;
+typedef struct s_gvars
+{
+	t_img		img;
+	char		**buffer;
+	char		*wall;
+	char		*player;
+	char		*exit;
+	char		*floor;
+	char		*item;
+	char		*m_name;
+	size_t		height;
+	size_t		width;
+	void		*mlx;
+	void		*mlx_win;
+	int			map_fd;
+	int			p_count;
+	int			e_count;
+	int			c_count;
+	int			o_items;
+	int			move_count;
+	int			p_pos[2];
+	int			e_pos[2];
+}t_gvars;
 void	check_map_format(char *map);
 int		ft_error(t_gvars *vars, int etype);
 void	ft_free_map(t_gvars *vars);
@@ -50,4 +54,7 @@ void	count_ch(t_gvars *vars, char c);
 int		check_chars(t_gvars *vars, char *line);
 int		is_map_even(t_gvars *vars);
 int		mlx_initialize(t_gvars *vars);
+void	destroy_imgs(t_gvars *vars);
+int		key_hook_handle(int keycode, t_gvars *vars);
+void	exit_hook(t_gvars *vars);
 #endif

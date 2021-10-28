@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 13:10:10 by                   #+#    #+#             */
-/*   Updated: 2021/10/27 11:48:35 by                  ###   ########.fr       */
+/*   Updated: 2021/10/28 11:05:23 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/so_long.h"
@@ -15,7 +15,7 @@ void	xpm_to_img(t_gvars *vars)
 {
 	int	sz;
 
-	sz = 64;
+	sz = 32;
 	vars->img.item = mlx_xpm_file_to_image(vars->mlx, vars->item, &sz, &sz);
 	vars->img.floor = mlx_xpm_file_to_image(vars->mlx, vars->floor, &sz, &sz);
 	vars->img.wall = mlx_xpm_file_to_image(vars->mlx, vars->wall, &sz, &sz);
@@ -50,7 +50,7 @@ void	check_n_print(t_gvars *vars, int i, int j)
 			TSZ * j, TSZ * i);
 }
 
-void	store_positions(t_gvars *vars, int i, int j)
+static void	store_positions(t_gvars *vars, int i, int j)
 {
 	int	z;
 
@@ -60,11 +60,6 @@ void	store_positions(t_gvars *vars, int i, int j)
 		vars->p_pos[0] = i * TSZ;
 		vars->p_pos[1] = j * TSZ;
 	}
-	else if (vars->buffer[i][j] == 'C')
-	{
-		vars->c_pos[++z] = i * TSZ;
-		vars->c_pos[++z] = j * TSZ;
-	}
 	else if (vars->buffer[i][j] == 'E')
 	{
 		vars->e_pos[0] = i * TSZ;
@@ -72,7 +67,7 @@ void	store_positions(t_gvars *vars, int i, int j)
 	}
 }
 
-void	first_draw(t_gvars *vars)
+static void	first_draw(t_gvars *vars)
 {
 	int	i;
 	int	j;

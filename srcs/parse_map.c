@@ -30,6 +30,8 @@ void	count_lines(t_gvars *vars)
 	char	*buf;
 
 	buf = get_next_line(vars->map_fd);
+	if (!buf)
+		exit((int)write(1, "Error: Empty map\n", 17));
 	vars->width = (ft_strlen(buf) - 1);
 	while (buf)
 	{

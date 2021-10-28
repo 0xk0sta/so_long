@@ -23,11 +23,14 @@ int	check_top_n_bot(t_gvars *vars, int chk)
 
 	i = -1;
 	if (chk == 0)
+	{
 		j = 0;
+		vars->width = vars->width;
+	}
 	else
 		j = vars->height;
-	while (i++ < vars->width)
-		if (vars->buffer[j][i] != '1')
+	while (i < vars->width)
+		if (vars->buffer[j][++i] != '1')
 			return (-1);
 	return (0);
 }

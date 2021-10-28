@@ -1,8 +1,5 @@
 #include "../includes/so_long.h"
 
-//TODO COMPROBAR QUE HAYA 1 SOLA EXIT y 1 SOLO PLAYER.
-//TODO COMPROBAR QUE HAYA AL MENOS 1 ITEM
-
 void	print_map(t_gvars *vars)
 {
 	int	i;

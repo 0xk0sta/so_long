@@ -4,6 +4,7 @@ void	ft_free_map(t_gvars *vars)
 	int	i;
 
 	i = 0;
+	(void)vars;
 	while (i < (int)vars->height)
 		if (vars->buffer[i])
 			free(vars->buffer[i++]);
