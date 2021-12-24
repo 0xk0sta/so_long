@@ -53,9 +53,6 @@ void	check_n_print(t_gvars *vars, int i, int j)
 
 static void	store_positions(t_gvars *vars, int i, int j)
 {
-	int	z;
-
-	z = -1;
 	if (vars->buffer[i][j] == 'P')
 	{
 		vars->p_pos[0] = i * TSZ;
