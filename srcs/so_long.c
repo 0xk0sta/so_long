@@ -61,7 +61,8 @@ int	main(int argc, char **argv)
 	if (vars.map_fd <= 0)
 	{
 		ft_free_imgs(&vars);
-		return ((int) write(1, &E0, 49));
+		write(1, &E0, 49);
+		return (1);
 	}
 	else
 		count_lines(&vars);
