@@ -15,16 +15,20 @@
 void	check_map_format(char *map)
 {
 	int	len;
+	int	cnt;
 
 	len = ft_strlen(map);
-	if (map[len - 1] != 'r')
-		exit((int)write(1, &E2, 27));
-	if (map[len - 2] != 'e')
-		exit((int)write(1, &E2, 27));
-	if (map[len - 3] != 'b')
-		exit((int)write(1, &E2, 27));
-	if (map[len - 4] != '.')
-		exit((int)write(1, &E2, 27));
+	cnt = 0;
+	if (map[len - 1] != 'r' && cnt == 0 && cnt++)
+		write(1, &E2, 27);
+	if (map[len - 2] != 'e' && cnt == 0 && cnt++)
+		write(1, &E2, 27);
+	if (map[len - 3] != 'b' && cnt == 0 && cnt++)
+		write(1, &E2, 27);
+	if (map[len - 4] != '.' && cnt == 0 && cnt++)
+		write(1, &E2, 27);
+	if (cnt != 0)
+		exit(1);
 }
 
 int	red_x_handle(int keycode, t_gvars *vars)
