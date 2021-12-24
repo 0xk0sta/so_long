@@ -17,7 +17,8 @@ int	ft_error(t_gvars *vars, int etype)
 	if (etype == 1)
 	{
 		ft_free_map(vars);
-		return ((int)write(1, &E1, 23));
+		write(1, &E1, 23);
+		exit(1);
 	}
 	if (etype == 2)
 	{
